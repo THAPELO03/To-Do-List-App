@@ -1,0 +1,35 @@
+#wholepage{background-color: darkseagreen;
+    color: black;
+    margin: auto;
+    border: 2px solid grey;
+    height: 700px;
+    width: 800px;
+    text-align: center
+    
+
+}
+#heading{background-color: aquamarine;
+    color:darkorchid;
+    text-align: center;
+    font-family: mickey;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
+image{
+    float:center;
+}
+#btnEdit{
+    float: right;
+}
+#btnDelete{
+    float: right;
+}
+
+#details{
+    text-align: center;
+    border: 1px solid grey;
+    background-color: aqua;
+    padding: 10px;   
+    border-radius: 5px; 
+}
