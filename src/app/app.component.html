@@ -10,19 +10,24 @@
 
 
            <input [(ngModel)]="TodoList" placeholder="enter your new chore"/>
+           <input [(ngModel)]="priority" placeholder="enter your chore priority"/>
             <button (click)="addList()">Add</button><br>
-<div>
+<div id="msg">
     
-  <ul>
-      <li id="details" (click)="remove(come)"  *ngFor="let chores of List" >{{chores}}
-         <button id="btnDelete" onclick="alert('Are you sure you want to delete')">Delete</button>
+  <ul id="details" (click)="remove(come)"  *ngFor="let chores of List" >
+     <i style="color: black"> your ToDo chore is:</i> {{chores.ItemName}} &nbsp;&nbsp; <i style="color: black">and its priority is:</i>{{chores.ItemPriority}}
+  
+        <button id="btnDelete" onclick="alert('Are you sure you want to delete')">Delete</button>
            
-           <button id="btnEdit" (click)="editChore(chores)">Edit</button>
-        
-      </li>
-  </ul>
-</div> 
+        <button id="btnEdit" (click)="editChore(chores)">Edit</button>
+  </ul>   
+  <div id="value"  *ngIf="empty">
+    <ul>
+      <h1>Your List have no Values</h1>
+    </ul>
 
+  </div>
+  
 <form>  
 
 </form>

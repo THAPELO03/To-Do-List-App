@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Script } from 'vm';
 import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrier';
+import { empty } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,23 +10,41 @@ import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrie
 })
 export class AppComponent {
   title = 'ToDoListApp';
-List=["---Default---"]
+List=[{ItemName:'',ItemPriority:''}]
 
+empty=true
 TodoList: string=""
+priority: string=""
+
+
 
 addList(){
- this.List.push(this.TodoList)
- this.TodoList=""
+ this.List.push({ItemName:this.TodoList,ItemPriority:this.priority})
+if (this.List.length>0){
+  this.empty=false
 }
+
+ this.TodoList=""
+ this.priority=""
+}
+
 
 remove(chores){
  let index = this.List.indexOf(chores)
  this.List.splice(index,1)
 }
-editChore(chores){
+editChore(chores,TodoList,priority){
   let index= this.List.indexOf(chores)
-  this.List[index] = prompt("Please edit task",chores)
+  let PopUpItemName = prompt("Edit task",chores.ItemName)
+  let PopUpItemPriority = prompt("Edit Priority",chores.ItemPriority)
+  this.List[index].ItemName=PopUpItemName
+  this.List[index].ItemPriority=PopUpItemPriority
+
 }
+
+  
+  
+
 
 
 }

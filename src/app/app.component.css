@@ -1,4 +1,4 @@
-#wholepage{background-color: darkseagreen;
+#wholepage{background-color: rgb(37, 62, 70);
     color: black;
     margin: auto;
     border: 2px solid grey;
@@ -16,20 +16,26 @@
     padding-bottom: 50px;
 
 }
-image{
-    float:center;
+#msg{
+    color: red;
+    font-style: normal;
 }
 #btnEdit{
     float: right;
+    color: rgb(97, 158, 4);
 }
 #btnDelete{
     float: right;
+    color: red;
 }
 
 #details{
     text-align: center;
     border: 1px solid grey;
-    background-color: aqua;
+    background-color:white;
     padding: 10px;   
     border-radius: 5px; 
+}
+#value{
+    color: white;
 }
